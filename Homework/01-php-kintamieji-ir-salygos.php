@@ -26,14 +26,14 @@ $pirmas = rand(0, 4);
 $antras = rand(0, 4);
 
 if ($pirmas > $antras) {
-    $rezultatas = $antras === 0 ? "Dalyba iš nulio negalima." : round($pirmas / $antras, 2); // round( , 2) - apvalinimas iki 2 po kablelio
+    $rezultatas = ($antras == 0) ? "Dalyba iš nulio negalima." : round($pirmas / $antras, 2); // round( , 2) - PHP funkcija apvalinimui iki 2 po kablelio.
     echo $rezultatas;
   
 } else if ($pirmas < $antras) {   
-    $rezultatas = $pirmas === 0 ? "Dalyba iš nulio negalima." : round($antras / $pirmas, 2);
+    $rezultatas = ($pirmas == 0) ? "Dalyba iš nulio negalima." : round($antras / $pirmas, 2);
     echo $rezultatas;
   
-} else if ($pirmas === $antras) {
+} else if ($pirmas == $antras) {
     echo "Reikšmės lygios.";
 }
 
@@ -59,7 +59,7 @@ if (($a < $b && $b < $c) || ($a > $b && $b > $c)) { // b vidurinis
     $middle = $a;
     $middle = 'a';
     echo "Kintamasis, turintis vidurinę reikšmę, yra $middle.";
-} else if (($a === $b || $a === $c || $b === $c) || ($a === $b && $a === $c && $b === $c)){ // visi arba du yra lygūs
+} else if (($a == $b || $a == $c || $b == $c) || ($a == $b && $a == $c && $b == $c)){ // visi arba du yra lygūs
     echo "Nėra kintamojo, turinčio vidurinę reikšmę.";
 }
 
@@ -88,24 +88,24 @@ $numB = rand(0, 2);
 $numC = rand(0, 2);
 $numD = rand(0, 2);
 
-$countZero = 0;
-$countOne = 0;
-$countTwo = 0;
+$countZero = 0; // Kintamasis, skaičiuoti visus 0.
+$countOne = 0; // Kintamasis, skaičiuoti visus 1.
+$countTwo = 0; // Kintamasis, skaičiuoti visus 2.
 
-if ($numA === 0) $countZero++;
-elseif ($numA === 1) $countOne++;
+if ($numA == 0) $countZero++;
+elseif ($numA == 1) $countOne++;
 else $countTwo++;
   
-if ($numB === 0) $countZero++;
-elseif ($numB === 1) $countOne++;
+if ($numB == 0) $countZero++;
+elseif ($numB == 1) $countOne++;
 else $countTwo++;
   
-if ($numC === 0) $countZero++;
-elseif ($numC === 1) $countOne++;
+if ($numC == 0) $countZero++;
+elseif ($numC == 1) $countOne++;
 else $countTwo++;
   
-if ($numD === 0) $countZero++;
-elseif ($numD === 1) $countOne++;
+if ($numD == 0) $countZero++;
+elseif ($numD == 1) $countOne++;
 else $countTwo++;
 
 echo "Nulių yra: $countZero. Vienetų yra: $countOne. Dvejetų yra: $countTwo.";
@@ -118,12 +118,12 @@ echo '____6 užduotis___<br><br>';
 
 $number = rand(1, 6);
 
-if ($number === 1) echo "<h1>$number</h1>";
-else if ($number === 2) echo "<h2>$number</h2>";
-else if ($number === 3) echo "<h3>$number</h3>";
-else if ($number === 4) echo "<h4>$number</h4>";
-else if ($number === 5) echo "<h5>$number</h5>";
-else if ($number === 6) echo "<h6>$number</h6>";
+if ($number == 1) echo "<h1>$number</h1>";
+else if ($number == 2) echo "<h2>$number</h2>";
+else if ($number == 3) echo "<h3>$number</h3>";
+else if ($number == 4) echo "<h4>$number</h4>";
+else if ($number == 5) echo "<h5>$number</h5>";
+else if ($number == 6) echo "<h6>$number</h6>";
 
 echo '<br><br><br>';
 
@@ -134,7 +134,7 @@ echo '____7 užduotis___<br><br>';
 $coloredNumber = rand(-10, 10);
 
 if ($coloredNumber < 0) echo "<span style='color:green'>$coloredNumber</span>";
-else if ($coloredNumber  === 0) echo "<span style='color:red'>$coloredNumber</span>";
+else if ($coloredNumber  == 0) echo "<span style='color:red'>$coloredNumber</span>";
 else echo "<span style='color:blue'>$coloredNumber</span>";
 
 echo '<br><br><br>';
@@ -145,9 +145,9 @@ echo '____8 užduotis___<br><br>';
 
 $candle = rand(5, 3000);
 
-$priceRegular = $candle * 1; // kaina, perkant iki 1000 EUR imtinai
-$priceDiscount3 = $candle * 0.97; // kaina su 3proc. nuolaida, perkant už 1001-2000 EUR imtinai
-$priceDiscount4 = $candle * 0.96; // kaina su 4proc. nuolaida, perkant už 2001-3000 EUR imtinai
+$priceRegular = $candle * 1; // Kaina, perkant iki 1000 EUR imtinai
+$priceDiscount3 = $candle * 0.97; // Kaina su 3 proc. nuolaida, perkant už 1001-2000 EUR imtinai
+$priceDiscount4 = $candle * 0.96; // Kaina su 4 proc. nuolaida, perkant už 2001-3000 EUR imtinai
 
 if ($candle <= 1000) echo "Perkama $candle vnt. žvakių už $priceRegular Eur kainą.";
 else if ($candle > 1000 && $candle <= 2000) echo "Perkama $candle vnt. žvakių už $priceDiscount3 Eur kainą.";
@@ -167,14 +167,15 @@ $numeroTres = rand(0, 100);
 $regularAverage = round(($numeroUno + $numeroDos + $numeroTres) / 3);
 echo $regularAverage;
 
-// Aritmetinis vidurkis, atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90.
 echo '<br><br>';
+// Aritmetinis vidurkis, atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90.
 
-$otherNumeroCount = 0; // kintamasis, skirtas norint suskaičiuoti įvestų reikšmių kiekį.
-$otherNumeroSum = 0; // kintamasis, skirtas suskaičiuoti reikšmių sumą, kuri reikalinga vidurkiui skaičiuoti.
+$otherNumeroCount = 0; // Kintamasis, skirtas norint suskaičiuoti įvestų reikšmių kiekį.
+$otherNumeroSum = 0; // Kintamasis, skirtas suskaičiuoti reikšmių sumą, kuri reikalinga vidurkiui skaičiuoti.
 
-if ($numeroUno > 10 && $numeroUno < 90) { // patikrina, ar $music1 reikšmė yra nuo 10 iki 90.
-    $otherNumeroCount++; // Jei taip, ji padidina kintamąjį $otherNumeroCount vienetu
+// Patikrina visus kintamuosius, ar atitinka sąlygą.
+if ($numeroUno > 10 && $numeroUno < 90) { // Patikrina, ar $music1 reikšmė yra nuo 10 iki 90.
+    $otherNumeroCount++; // Jei taip, ji padidina kintamąjį $otherNumeroCount vienetu...
     $otherNumeroSum += $numeroUno;  // ir prideda $numeroUno reikšmę prie kintamojo $otherNumeroSum.
 }
 if ($numeroDos > 10 && $numeroDos < 90) {
@@ -186,7 +187,7 @@ if ($numeroTres > 10 && $numeroTres < 90) {
     $otherNumeroSum += $numeroTres;
 }
 
-if($otherNumeroCount === 3) { // jei visų kintamųjų reikšmės atitinka sąlygą
+if($otherNumeroCount == 3) { // Jei visų kintamųjų reikšmės atitinka sąlygą...
     $otherAverage = round($otherNumeroSum / $otherNumeroCount); // dalina reikšmių sumą iš kintamųjų skaičiaus
     echo $otherAverage;
 } else {
