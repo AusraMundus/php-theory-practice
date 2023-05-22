@@ -47,6 +47,9 @@ $a = rand(0, 25);
 $b = rand(0, 25);
 $c = rand(0, 25);
 
+echo "Kintamasis a: $a, kintamasis b: $b, kintamasis c: $c";
+echo '<br><br>';
+
 if (($a < $b && $b < $c) || ($a > $b && $b > $c)) { // b vidurinis
     $middle = $b;
     $middle = 'b';
@@ -108,6 +111,8 @@ if ($numD == 0) $countZero++;
 elseif ($numD == 1) $countOne++;
 else $countTwo++;
 
+echo "$numA, $numB, $numC, $numD";
+echo '<br><br>';
 echo "Nulių yra: $countZero. Vienetų yra: $countOne. Dvejetų yra: $countTwo.";
 
 echo '<br><br><br>';
