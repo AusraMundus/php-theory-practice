@@ -161,10 +161,11 @@ echo '<br><br>';
 
 $sentence_2 = "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
 
+// mb_strlen() - Gets the length of a string. A multi-byte character is counted as 1. Good for all characters count (LT...)
 $words_2 = explode(" ", $sentence_2);
 $total_2 = 0;
-for ($i = 0; $i <count($words_2); $i++) {
-    if (strlen($words_2[$i]) <= 5) {
+for ($i = 0; $i < count($words_2); $i++) {
+    if (mb_strlen($words_2[$i]) <= 5) {
         $total_2++;
     }
 }
