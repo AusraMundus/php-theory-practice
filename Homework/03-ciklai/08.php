@@ -6,9 +6,9 @@ echo '____8 užduotis___<br><br>';
 
 // 8. Reikia nupaišyti pilnavidurį rombą, taip pat, kaip ir pilnavidurį kvadratą (https://lt.wikipedia.org/wiki/Rombas), kurio aukštis 21 eilutė. Reikia padaryti, kad kiekviena rombo žvaigždutė būtų atsitiktinės RGB spalvos (perkrovus puslapį spalvos turi keistis).
 
-$diagonalLength = 21; // Replace 5 with your desired diagonal length
+$rhombusSize = 21;
 
-// Function to generate a random color
+// Random spalva
 function randomColor()
 {
   $red = rand(0, 255);
@@ -17,13 +17,13 @@ function randomColor()
   return "rgb(".$red.",".$green.",".$blue.")";
 }
 
-// Generate the top half of the rhombus
-for($i = 0; $i < $diagonalLength; $i++) {
-    // Print spaces before the asterisks
-    for($j = 0; $j < $diagonalLength - $i - 1; $j++) {
+// Rombo virsutine dalis
+for($i = 0; $i < $rhombusSize; $i++) {
+    // Tarpai
+    for($j = 0; $j < $rhombusSize - $i - 1; $j++) {
       echo " ";
     }
-    // Print the random colored asterisks for the diagonal lines
+    // Spalvos
     for($j = 0; $j < 2*$i+1; $j++) {
       $color = randomColor();
       echo "<span style='color:".$color."'>*</span>";
@@ -31,13 +31,13 @@ for($i = 0; $i < $diagonalLength; $i++) {
     echo "<br>";
   }
   
-  // Generate the bottom half of the rhombus
-  for($i = $diagonalLength-2; $i >= 0; $i--) {
-    // Print spaces before the asterisks
-    for($j = 0; $j < $diagonalLength - $i - 1; $j++) {
+  // Rombo apatine dalis
+  for($i = $rhombusSize-2; $i >= 0; $i--) {
+    // Tarpai
+    for($j = 0; $j < $rhombusSize - $i - 1; $j++) {
       echo " ";
     }
-    // Print the random colored asterisks for the diagonal lines
+    // Spalvos
     for($j = 0; $j < 2*$i+1; $j++) {
       $color = randomColor();
       echo "<span style='color:".$color."'>*</span>";
