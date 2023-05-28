@@ -18,7 +18,7 @@ while (true) {
         break;
     }
 }
-echo "Pirmasis masyvas: <br>";
+echo "Pirmasis masyvas: \n";
 print_r($array1);
 
 // Array1
@@ -33,10 +33,10 @@ while (true) {
         break;
     }
 }
-echo "Antrasis masyvas: <br>";
+echo "Antrasis masyvas: \n";
 print_r($array2);
 
 // Unikalus masyvas
 $arrayUnique = array_intersect($array1, $array2); // array_intersect — Computes the intersection of arrays
-echo "Masyvas iš elementų, kurie kartojasi abiejuose masyvuose: <br>";
+echo "Masyvas iš elementų, kurie kartojasi abiejuose masyvuose: \n";
 print_r(array_values($arrayUnique));

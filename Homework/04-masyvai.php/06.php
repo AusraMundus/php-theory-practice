@@ -18,7 +18,7 @@ while (true) {
         break;
     }
 }
-echo "Pirmasis masyvas: <br>";
+echo "Pirmasis masyvas: \n";
 print_r($array1);
 
 // Array1
@@ -33,5 +33,5 @@ while (true) {
         break;
     }
 }
-echo "Antrasis masyvas: <br>";
+echo "Antrasis masyvas: \n";
 print_r($array2);

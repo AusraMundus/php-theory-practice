@@ -15,16 +15,11 @@ echo '____2 užduotis___<br><br>';
 // h. Suraskite pirmą (mažiausią) indeksą, kurio elemento reikšmė didesnė už 10;
 // i. Naudodami funkciją unset() iš masyvo ištrinkite visus elementus turinčius porinį indeksą;
 
-$array = [];
-
-for ($i = 0; $i < 30; $i++) {
+for ($i = 0; $i <= 30; $i++) {
     $randomNumber = rand(5, 25);
     $array[] = $randomNumber;
 }
-
-foreach ($array as $key => $value) {
-    echo "$key => $value\n";
-}
+print_r($array);
 
 echo '<br><br>';
 // a. Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
@@ -35,7 +30,7 @@ foreach ($array as $value) {
         $count++;
     }
 }
-echo 'Masyve reikšmių didesnių už 10 yra: ' . $count;
+echo "Masyve reikšmių didesnių už 10 yra: " . $count;
 
 echo '<br><br>';
 // b. Raskite didžiausią masyvo reikšmę ir jos indeksą arba indeksus jeigu yra keli;
@@ -72,7 +67,6 @@ foreach ($array as $key => $value) {
 print_r($newArray);
 
 echo '<br><br>';
-
 // e. Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
 
 for ($i = 0; $i < 10; $i++) {

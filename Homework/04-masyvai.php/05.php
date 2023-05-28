@@ -28,6 +28,7 @@ for ($i = 0; $i < 200; $i++) { // prasukam ciklą
     $newValues = $array1[$i] . $array2[$i] . $array3[$i]; // imant kiekvieno masyvo reikšmės indeksą, sukuriamos naujo masyvo reikšmės (pvz., DBA)
     $newArray[] = $newValues; // 
 }
+echo "Naujas jungtinis masyvas, sudėjus 3-jų masyvų reikšmes: \n";
 print_r($newArray);
 
 // Skaičiuojame, kiek unikalių naujo masyvo reikšmių kombinacijų
@@ -36,6 +37,6 @@ $uniqueCombos = count(array_unique($newArray)); // array_unique() function remov
 // Skaičiuojame, kiek unikalių (po vieną, nesikartojančių) naujo masyvo reikšmių
 $uniqueValues = count(array_unique(array_count_values($newArray))); // array_count_values — Counts all the values of an array and returns an associative array of values ​​from array as keys and their count as value.
 
-echo "Unikalios (po vieną, nesikartojančios) reikšmės: " . $uniqueValues . "<br>";
-echo "Unikalios kombinacijos: " . $uniqueCombos;
+echo "Unikalios (po vieną, nesikartojančios) reikšmės: " . $uniqueValues . "\n";
+echo "Unikalios kombinacijos: " . $uniqueCombos . "\n";
 

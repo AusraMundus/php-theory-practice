@@ -2,11 +2,10 @@
 
 echo '<pre>';
 
-echo '____7 užduotis___<br><br>';
+echo '____9 užduotis___<br><br>';
 
-// 7. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
+// 9. Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
 
-// Array1
 $array1 = array();
 
 while (true) {
@@ -36,7 +35,6 @@ while (true) {
 echo "Antrasis masyvas: \n";
 print_r($array2);
 
-// Unikalus masyvas
-$arrayUnique = array_diff($array1, $array2); // array_diff — Computes the difference of arrays
-echo "Masyvas iš reikšmių, kurios yra pirmame masyve, bet nėra antrame masyve: \n";
-print_r($arrayUnique);
+$newArray = array_combine($array1, $array2); // array_combine — Creates an array by using one array for keys and another for its values
+echo "Naujas masyvas: \n";
+print_r($newArray);
