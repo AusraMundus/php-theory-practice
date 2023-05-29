@@ -83,13 +83,15 @@ echo 'Masyvas, kurio elementai sudaryti iš 7 elementų :';
 print_r($newArray);
 
 echo '<br>';
-
-echo '?????????????????????????????????????????';
-
 // e. Suskaičiuokite kiekvieno iš antro lygio masyvų elementų sumą atskirai ir sumas panaudokite kaip reikšmes sukuriant naują masyvą. T.y. pirma naujo masyvo reikšmė turi būti lygi mažesnio masyvo, turinčio indeksą 0 dideliame masyve, visų elementų sumai 
 
-foreach ($array as $key => $subArray) {
-    $subArray = $array[0];
-    $subArray0Sum = array_sum($subArray); 
+$sumArray = [];
+foreach ($array as $subArray){
+    $sum = 0;
+    foreach($subArray as $value){
+        $sum += $value;
+    }
+    $sumArray[] = $sum;
 }
-echo "Antro lygio masyvų elementų sumos: $subArray0Sum \n";
+
+echo "Sumos lygu: " . implode(" ", $sumArray);

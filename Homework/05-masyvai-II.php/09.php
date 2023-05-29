@@ -23,57 +23,20 @@ for ($i = 0; $i < 10; $i++) {
 print_r($array);
 
 echo '<br>';
-// Paskaičiuokite masyvo visų reikšmių sumą
 
-$sum = 0;
-
-foreach ($array as $value) {
-    if (is_array($value)) {
-        foreach ($value as $digit) {
-            if (is_integer($digit)) {
-                $sum += $digit;
-            }
-        }
-    } 
-    else {
-        if (is_integer($value)) {
-            $sum += $value;
-        }
+$sum = [0];
+foreach ($array as $subArray){
+    if (gettype($subArray) === "integer") {
+        $sum[0]  += $subArray;
+    } else {
+        $sum[] = array_sum($subArray);
     }
 }
-echo 'Masyvo visų reikšmių suma: ';
-print_r($sum);
+echo "Masyvo visų reikšmių sumos: <br>";
+echo implode(" ", $sum);
 
 echo '<br><br>';
-// Išrūšiuokite pirmo lygio masyvą taip, kad elementai kurių masyvai trumpiausi, eitų pradžioje
 
-sort($array);
-
-foreach ($array as &$subArray) {
-    if (is_array($subArray)) {
-        $sum = array_sum($subArray);
-        sort($subArray);
-        $subArray = ['subArray' => $subArray, 'sum' => $sum];
-    }
-}
-unset($subArray);
-
-usort($array, function($a, $b) {
-    if (is_array($a) && is_array($b)) {
-        if (array_key_exists('sum', $a) && array_key_exists('sum', $b)) {
-            return $a['sum'] - $b['sum'];
-        }
-    }
-    if (is_int($a) && is_int($b)) {
-        return $a - $b;
-    }
-});
-
-echo "Parent array and subarrays sorted ascendingly: \n";
-foreach ($array as $key => $value) {
-    if (is_array($value)) {
-        echo "[$key] -> [" . implode(', ', $value['subArray']) . "], sum: " . $value['sum'] . " \n";
-    } else {
-        echo "[$key] -> $value \n";
-    }
-}
+echo "Masyvo visų reikšmių sumų rūšiavimas didėjančia tvarka: <br>";
+sort($sum);
+echo implode(" ", $sum);
