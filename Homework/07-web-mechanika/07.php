@@ -1,5 +1,6 @@
 <?php
-echo '<pre>';
+// 7. Pakartokite 6 uždavinį. Papildykite jį kodu, kuris naršyklę po POST metodo peradresuotų tuo pačiu adresu (t.y. į patį save) jau GET metodu.
+
 
 $color = $_GET['color'] ?? 'green';
 
@@ -8,8 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: http://localhost/php-theory-practice/Homework/07-web-mechanika/07.php?color=violet', true, 303);
     exit;
 }
-
-print_r($_SERVER);
 
 ?>
 

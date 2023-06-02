@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo '<input type="checkbox" id="' . $i . '" name="masyvas[]" />';
             }
             ?>
-            <button type="submit">Change the color</button>
+            <button type="submit">Suskaičiuok, kiek pažymėjau</button>
         </form>
     <?php endif ?>
 </body>
