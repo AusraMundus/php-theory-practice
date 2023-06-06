@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +17,7 @@
 
 <body>
     <h1>Home Page</h1>
-    <a href="http://localhost/php-theory-practice/019/login/login.php">Login</a>
+    <?php require __DIR__ . '/menu.php' ?>
 </body>
 
 </html>

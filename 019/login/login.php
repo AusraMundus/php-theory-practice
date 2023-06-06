@@ -2,8 +2,20 @@
 
 session_start();
 
+if (isset($_SESSION['name']) && !isset($_GET['logout'])) {
+    header('Location: http://localhost/php-theory-practice/019/login/');
+    die;
+}
+
 // Method POST - duomenu irasymas
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (isset($_GET['logout'])) {
+        unset($_SESSION['name']);
+        $_SESSION['error'] = 'Logged out successfully';
+        header('Location: http://localhost/php-theory-practice/019/login/login.php');
+    die;
+    }
 
     $users = file_get_contents(__DIR__ . '/users.json');
     $users = json_decode($users, 1);
@@ -29,9 +41,7 @@ if (isset($_SESSION['error'])) {
     $error = '';
 }
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,10 +55,6 @@ if (isset($_SESSION['error'])) {
 
 <body>
     <h1>Login Page</h1>
-
-    <h2>
-        <a href="http://localhost/php-theory-practice/019/login/">Home</a>
-    </h2>
 
     <?php if ($error) : ?>
         <h3 style="color:crimson;"><?= $error ?></h3>
