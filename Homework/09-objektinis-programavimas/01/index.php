@@ -6,16 +6,20 @@ echo '<pre>';
 
 require __DIR__ . '/Kibiras1.php';
 
-$kibiriukas = new Kibiras1;
+$kibiras = new Kibiras1;
+var_dump($kibiras);
+echo '<br><br>';
 
 echo 'Pridėti 1 akmenį: ';
-echo $kibiriukas->prideti1Akmeni();
-echo '<br>';
+echo $kibiras->prideti1Akmeni();
+echo '<br><br>';
 
 echo 'Pridėti daug akmenų: ';
 $kiekis = 100;
-echo $kibiriukas->pridetiDaugAkmenu($kiekis);
-echo '<br>';
+echo $kibiras->pridetiDaugAkmenu($kiekis);
+echo '<br><br>';
 
 echo 'Akmenų pririnkta: ';
-echo $kibiriukas->kiekPririnktaAkmenu();
+echo $kibiras->kiekPririnktaAkmenu();
+echo '<br><br>';
+

@@ -14,7 +14,7 @@ class Kibiras1
 
     public function pridetiDaugAkmenu($kiekis) : int
     {
-        $this->akmenuKiekis += ($kiekis - 1);
+        $this->akmenuKiekis += $kiekis;
         return $this->akmenuKiekis;
     }
 
