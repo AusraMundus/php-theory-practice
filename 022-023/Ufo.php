@@ -17,6 +17,13 @@ class Ufo
     // Savybe. Savybes deklaracija
     public $speed = 5;
 
+    private $destination = 'Moon';
+
+    public function where() : string
+    {
+        return $this->destination;
+    }
+
     // Funkcija - metodas
     private function whatTime(): string // kintamojo tipas - reikia nurodyti, ka grazina metodas. Gali buti string, array, int.... Del klaidu paiesku labai gerai
     {

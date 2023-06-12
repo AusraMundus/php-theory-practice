@@ -30,6 +30,10 @@ echo '<br>';
 echo $ufo2->turbo();
 echo '<br>';
 
+echo $ufo1->where();
+
 // Atspausdina php sukurta objekta
 var_dump($ufo1); 
 var_dump($ufo2);
+
+
