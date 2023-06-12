@@ -6,8 +6,10 @@ echo '<pre>';
 require __DIR__ . '/Ufo.php';
 
 // Kuriame objekta - kintamajame pasigaminame nauja klase
-$ufo1 = new Ufo;
-$ufo2 = new Ufo;
+$ufo1 = new Ufo('Jupiter');
+$ufo2 = new Ufo('Alfa Centauri', 55585658565255);
+
+// unset($ufo2);
 
 // Priskyrimas - perdavimas pagal referensa, nesukuria naujo objekto
 // $ufo3 = $ufo1;
@@ -17,20 +19,29 @@ $ufo2 = new Ufo;
 
 // Savybe galime pakeisti
 // Kintamojo savybe - nedeti $
-$ufo1->speed = 17;
+// $ufo1->speed = 17;
 echo '<br>';
 
 // Isspausdina savybe
-echo $ufo1->speed;
-echo '<br>';
-echo $ufo2->whatTimeBig();
-echo '<br>';
-echo $ufo1->turbo();
-echo '<br>';
-echo $ufo2->turbo();
+//echo $ufo1->speed;
+//echo '<br>';
+//echo $ufo2->whatTimeBig();
+//echo '<br>';
+//echo $ufo1->turbo();
+//echo '<br>';
+//echo $ufo2->turbo();
+//echo '<br>';
+
+//echo $ufo1->destination;
+//echo '<br>';
+
+//echo $ufo1->destination = 'Mars';
 echo '<br>';
 
-echo $ufo1->where();
+// echo $ufo2->bebras;
+echo '<br>';
+
+//echo $ufo1->where();
 
 // Atspausdina php sukurta objekta
 var_dump($ufo1); 
