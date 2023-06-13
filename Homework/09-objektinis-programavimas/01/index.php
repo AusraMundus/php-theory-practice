@@ -6,6 +6,25 @@ echo '<pre>';
 
 require __DIR__ . '/Kibiras1.php';
 
+
+$petro = new Kibiras1;
+
+$ievos = new Kibiras1;
+
+
+$petro->prideti1Akmeni();
+$ievos->prideti1Akmeni();
+
+$petro->pridetiDaugAkmenu(7);
+$ievos->pridetiDaugAkmenu(9);
+
+$petro->kiekPririnktaAkmenu();
+$ievos->kiekPririnktaAkmenu();
+
+
+
+/* Mano variantas
+
 $kibiras = new Kibiras1;
 var_dump($kibiras);
 echo '<br><br>';
@@ -22,4 +41,6 @@ echo '<br><br>';
 echo 'Akmenų pririnkta: ';
 echo $kibiras->kiekPririnktaAkmenu();
 echo '<br><br>';
+
+*/
 
