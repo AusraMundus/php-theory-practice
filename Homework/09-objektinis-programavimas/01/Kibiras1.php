@@ -36,7 +36,7 @@ class Kibiras1
 
     public function prideti1Akmeni() : void
     {
-        $this->akmenuKiekis++;
+        $this->akmenuKiekis += 1;
     }
 
     public function pridetiDaugAkmenu($kiekis) : void

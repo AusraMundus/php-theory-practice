@@ -1,6 +1,7 @@
 <?php
 
-class Paukstis {
+// extends - tevines klases priskyrimas
+class Paukstis extends Miskas {
 
     // $name, $age - kintamuju savybes
     public $name, $age;
@@ -14,12 +15,13 @@ class Paukstis {
 
     public function fly() : void
     {
-        echo '<h1>' . $this->name . ' Skrenda skrenda</h1>';
+        echo '<h1>' . $this->name . ' Skrenda skrenda ' . $this->color . '</h1>';
     }
 
+    // tevo funkcijos overraidinimas - laimi vaiko funkcija
     public function getArea() : string
     {
-        return 'Miško dydis yra: ' . rand(10, 99);
+        return '<h2>Aš karvelis gyvenu mieste</h2>';
     }
-    
+
 }
