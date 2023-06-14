@@ -12,8 +12,7 @@ require __DIR__ . '/KibirasNePo1.php';
 
 $manoKibiras = new KibirasNePo1;
 
-echo $manoKibiras->prideti1Akmeni() . '<br>';
-
-echo $manoKibiras->pridetiDaugAkmenu(100) . '<br>';
+$manoKibiras->prideti1Akmeni();
+$manoKibiras->prideti1Akmeni();
 
 echo 'Akmenų pririnkta: ' . $manoKibiras->kiekPririnktaAkmenu();

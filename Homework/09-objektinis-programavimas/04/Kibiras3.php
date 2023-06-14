@@ -7,7 +7,8 @@
 
 class Kibiras3 {
 
-    private $akmenuKiekis;
+    protected $akmenuKiekis;
+
 
     public function __construct($kiekis = 0)
     {
