@@ -20,3 +20,17 @@ do {
 echo 'Pririnkta grybų, g: ' . $manoKrepsys->kiekis;
 
 // echo Krepsys::DYDIS;
+
+
+/* KITAS BUDAS
+
+$krepsys = new Krepsys;
+
+do{}
+while ($krepsys->deti(new Grybas));
+
+echo '<pre>';
+
+var_dump($krepsys);
+
+*/

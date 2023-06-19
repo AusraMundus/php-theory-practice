@@ -14,7 +14,7 @@ class Krepsys
         $this->kiekis += $gryboSvoris;
     }
 
-    public function arPilnas() : bool
+    public function arPilnas(): bool
     {
         if ($this->kiekis >= self::DYDIS) {
             return true;
@@ -27,5 +27,25 @@ class Krepsys
     {
         return $this->kiekis;
     }
+}
+
+
+/* KITAS BUDAS
+
+class Krepsys {
+
+    const DYDIS = 500;
+    private $svoris = 0;
+
+    public function deti(Grybas $grybas): bool
+    {
+        if ($grybas->valgomas && !$grybas->sukirmijes) {
+            $this->svoris += $grybas->svoris;
+            return self::DYDIS >= $this->svoris;
+        }
+        return true;
+    }
 
 }
+
+*/
