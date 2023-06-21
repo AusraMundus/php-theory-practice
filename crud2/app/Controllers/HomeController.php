@@ -2,10 +2,14 @@
 
 namespace Colors\Controllers;
 
+use Colors\App;
+
 class HomeController
 {
     public function index()
     {
-        echo '<h1>HomeController</h1>';
+        return App::view('home/index', [
+            'pageTitle' => 'Home - COLORS'
+        ]);
     }
 }
