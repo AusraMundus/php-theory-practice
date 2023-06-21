@@ -11,6 +11,6 @@ interface DataBase
     function delete(int $userId) : void;
 
     function show(int $userId) : array;
-
+    
     function showAll() : array;
 }
