@@ -15,6 +15,7 @@ class ColorController
 
     public function list()
     {
+
         $colors = App::get('colors')->showAll();
 
         $html = App::render('color/list', [
@@ -25,6 +26,8 @@ class ColorController
             'html' => $html,
             'success' => true
         ]);
+        
+        
     }
 
     public function store($data)
@@ -44,4 +47,28 @@ class ColorController
             'success' => true
         ]);
     }
+
+    public function edit(int $id)
+    {
+        $color = App::get('colors')->show($id);
+        
+        $html = App::render('color/edit', [
+            'color' => $color,
+        ]);
+
+        return App::json([
+            'html' => $html,
+            'success' => true
+        ]);
+    }
+
+    public function update(int $id, $data)
+    {
+        App::get('colors')->update($id, $data);
+
+        return App::json([
+            'success' => true
+        ]);
+    }
+
 }
