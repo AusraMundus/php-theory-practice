@@ -1,3 +1,8 @@
+<!-- Duomenu paemimas is DB -->
+
+<!-- https://www.w3schools.com/MySQL/mysql_sql.asp -->
+
+<!-- Duombaze -->
 <?php
 
 $host = 'localhost';
@@ -15,8 +20,9 @@ $options = [
 
 $pdo = new PDO($dsn, $user, $pass, $options);
 
-// SELECT column1, column2, ...
-// FROM table_name;
+// Nurodome, kokius duomenis imti is DB
+    // SELECT column1, column2, ...
+    // FROM table_name;
 
 $sql = "
     SELECT id, title, height, type
@@ -25,15 +31,14 @@ $sql = "
     ORDER BY type, height DESC
 ";
 // Rusiavimas - WHERE
-    // nelygu zenklas <> arba !=
-    // kai norim kelis paimti, pvz. type = 1 || type = 2
-    // type = 1 && height > 1
+// nelygu zenklas <> arba !=
+// kai norim kelis paimti, pvz. type = 1 || type = 2
+// type = 1 && height > 1
 // Rikiavimas - ORDER BY
-    // galime nurodyti kaip rikiuoti
-
+// galime nurodyti kaip rikiuoti
 
 $stmt = $pdo->query($sql); // DB steitmentas
-$trees = $stmt->fetchAll(); // Visi medziai
+$trees = $stmt->fetchAll(); // Visko istraukimas
 
 $types = [
     1 => 'Lapuotis',
@@ -41,6 +46,7 @@ $types = [
     3 => 'Palmė',
 ];
 
+// ATVAIZDAVIMAS NARSYKLEJE
 ?>
 <table>
     <tr>
@@ -49,12 +55,12 @@ $types = [
         <th>Aukstis</th>
         <th>Tipas</th>
     </tr>
-    <?php foreach($trees as $tree): ?>
-    <tr>
-        <td><?= $tree['id'] ?></td>
-        <td><?= $tree['title'] ?></td>
-        <td><?= $tree['height'] ?></td>
-        <td><?= $types[$tree['type']] ?></td>
-    </tr>
+    <?php foreach ($trees as $tree) : ?>
+        <tr>
+            <td><?= $tree['id'] ?></td>
+            <td><?= $tree['title'] ?></td>
+            <td><?= $tree['height'] ?></td>
+            <td><?= $types[$tree['type']] ?></td>
+        </tr>
     <?php endforeach ?>
 </table>
