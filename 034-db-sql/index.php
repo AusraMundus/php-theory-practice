@@ -34,7 +34,7 @@ $sql = "
 // nelygu zenklas <> arba !=
 // kai norim kelis paimti, pvz. type = 1 || type = 2
 // type = 1 && height > 1
-// Rikiavimas - ORDER BY
+// Rikiavimas - ORDER BY 
 // galime nurodyti kaip rikiuoti
 
 $stmt = $pdo->query($sql); // DB steitmentas

@@ -1,5 +1,3 @@
-<!-- Duomenu irasymas i DB -->
-
 <?php
 
 if (!empty($_POST)) {
@@ -19,35 +17,37 @@ if (!empty($_POST)) {
 
     $pdo = new PDO($dsn, $user, $pass, $options);
 
+    $id = $_POST['id'] ?? 0;
     $title = $_POST['title'] ?? '';
     $height = $_POST['height'] ?? 0;
     $type = $_POST['type'] ?? 0;
 
-    // INSERT INTO table_name (column1, column2, column3, ...)
-    // VALUES (value1, value2, value3, ...);
+    // UPDATE table_name
+    // SET column1 = value1, column2 = value2, ...
+    // WHERE condition;
 
-    // Nurodome, ka irasome i DB
+
     $sql =
         "
-        INSERT INTO trees 
-        (title, height, type)
-        VALUES (?, ?, ?)
+        UPDATE trees
+        SET title = ?, height = ?, type = ?
+        WHERE id = ?
         ";
 
-    //$pdo->query($sql); // Irasymas
+    // $pdo->query($sql); // DB steitmentas
 
-    // Apsauga nuo netinkamu uzklausu. VALUES (:t, ?, ?). kintamiesiems galime suteikti vardus, pvz. :t, kad nepasimesti tarp daug kintamuju.  $stmt->execute(['t' => $title, $height, $type]);
+    // Apsauga nuo netinkamu uzklausu, kad tinkamai duomenys butu irasyti.
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$title, $height, $type]);
+    $stmt->execute([$title, $height, $type, $id]);
 
     header('Location: http://localhost/php-theory-practice/034-db-sql/');
     die;
 }
-// kintamuosius stringus dedame i '', pvz., VALUES ('$title', $height, $type) - cia kai nesaugus variantas
 
 ?>
 
 <form action="" method="post">
+    <input type="text" name="id" placeholder="ID">
     <input type="text" name="title" placeholder="Pavadinimas">
     <input type="text" name="height" placeholder="Aukstis">
     <select name="type">
@@ -55,5 +55,5 @@ if (!empty($_POST)) {
         <option value="2">Spygliuotis</option>
         <option value="3">Palmė</option>
     </select>
-    <button type="submit">Prideti</button>
+    <button type="submit">Redaguoti</button>
 </form>
