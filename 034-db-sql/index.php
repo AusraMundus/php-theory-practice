@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$db   = 'zuikis';
+$db   = 'studies';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
@@ -21,7 +21,15 @@ $pdo = new PDO($dsn, $user, $pass, $options);
 $sql = "
     SELECT id, title, height, type
     FROM trees
+    WHERE type <> 3
+    ORDER BY type, height DESC
 ";
+// Rusiavimas - WHERE
+    // nelygu zenklas <> arba !=
+    // kai norim kelis paimti, pvz. type = 1 || type = 2
+    // type = 1 && height > 1
+// Rikiavimas - ORDER BY
+    // galime nurodyti kaip rikiuoti
 
 
 $stmt = $pdo->query($sql); // DB steitmentas
