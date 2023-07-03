@@ -15,7 +15,9 @@ $options = [
 
 $pdo = new PDO($dsn, $user, $pass, $options);
 
-// JOIN budai - duombaze apie juos nezino. Duombazeje reikia sujungti papildomai
+// JOIN budai - duombaze apie juos nezino.
+// Duombazeje reikia sujungti papildomai norimas lenteles. Nesujungs, jei yra vaikas be tevo, pvz. tel. nr. (vaikas) be kliento (tevas). Klientas (tevas) gali buti be tel. nr. (vaikas). Jungiant pasirenkame vaikineje lenteleje (phone), ka jungsime: > Stucture > Relation view > Column: client_id > Database: studies > Table: clients > Column: id
+// Rysi galima pasiziureti > Duombaze > Designer > Rodo rysi - clients id su phone client_id
 
 // INNER JOIN
 $sql = "
